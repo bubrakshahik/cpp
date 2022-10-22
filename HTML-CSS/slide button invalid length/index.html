@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div onmousedown="coordinatesFunc(event)">
+        <p>
+            <a href="">Click me</a> to get coordinates of cursor
+        </p>
+    </div>
+
+    <div class="form-container">
+        <form action="" class="form">
+            <input type="text" name = "name" id = "name"><span class = "error-span">* nameError</span>
+            <br><input type="password" name = "pass" id = "pass" minlength="8"><span class = "error-span">* passwordError</span>
+            <div id = "btndiv"><br><input type="submit" class = "button" id="button"></div> 
+        </form>
+    </div>
+</body>
+    <script>
+
+    function coordinatesFunc(event) 
+    {
+        document.write("Coordinate(X) = " + event.clientX + "<br>Coordinate(Y) = " + event.clientY);
+    }
+
+    var min = document.getElementById('pass');
+    var btn = document.getElementById('button');
+    
+    var pos = 0;
+    
+
+    min.addEventListener("input", (event)=>
+    {
+        if(min.value.length > 7)
+        {
+            btn.style.color = "white";
+            btn.style.background = "green";
+            min.style.color = "white";
+            min.style.background = "green";
+        }
+        else
+        {
+            btn.style.color = "white";
+            btn.style.background = "red";
+            min.style.color = "white";
+            min.style.background = "red";
+        }
+    })
+    
+    btn.addEventListener('mouseover', (event)=>{
+        // console.log(event.clientX);
+        if (min.value.length < 7)
+        {
+            btnPos = event.clientX;
+            
+            if(pos === 0)
+            {
+                btnX = btnPos + btnPos;
+                pos = 1;
+                btn.style.transform = "translateX(" + btnX +"px)";
+            }
+            
+            else if(pos === 1)
+            {
+                btnPos = event.clientX;    
+                btnX = btnPos - btnPos;
+                btn.style.transform = "translateX(" + btnX +"px)";
+                pos = 0;
+            }
+
+        }
+    })
+    </script>
+</html>
