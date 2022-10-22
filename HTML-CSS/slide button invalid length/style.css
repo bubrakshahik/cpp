@@ -1,0 +1,22 @@
+body{
+    background-color: rgba(39, 0, 55, 0.184);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    padding-inline: auto;
+    /* background-color: rgb(48, 30, 30); */
+    
+
+}
+.form > *{
+    /* margin: 0px 600px; */
+
+}
+
+.form > input[type="text"], .form > input[type="password"] 
+{
+    font-size: 25px;
+    width: 200px;
+}
