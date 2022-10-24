@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Partially Vaccinated Data Form</title>
+<meta name="keywords" content="CS202 Assignmnet no " />
+
+<meta name="description" content="CS202 Assignmnet no " />
+<style type='text/css' />
+
+
+h1 {
+margin-left: 70px;
+}
+form li {
+list-style: none;
+margin-bottom: 5px;
+}
+
+form ul li label{
+float: left;
+clear: left;
+width: 100px;
+text-align: right;
+margin-right: 10px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:14px;
+}
+
+form ul li input, select, span {
+float: left;
+margin-bottom: 10px;
+}
+
+form textarea {
+float: left;
+width: 350px;
+height: 150px;
+}
+
+[type="submit"] {
+clear: left;
+margin: 20px 0 0 230px;
+font-size:18px
+}
+</style>
+<script>
+
+//Pin id validation starts
+function pincode_id(){
+'use strict';
+var pinid_name = document.getElementById("pin_id");
+var pinid_value = document.getElementById("pin_id").value;
+var pinid_length = pinid_value.length;
+if(pinid_length<7 || pinid_length>12)
+{
+document.getElementById('id_error').innerHTML = 'Pin id must not be less than 11 characters';
+pinid_name.focus();
+document.getElementById('id_error').style.color = "#FF0000";
+}
+else
+{
+document.getElementById('id_error').innerHTML = 'Valid Pin id';
+document.getElementById('id_error').style.color = "#00AF33";
+}
+}
+//pin id validation ends
+
+//Id Card validation starts
+function id_card_validation(){
+'use strict';
+var numbers = /^[0-9]+$/;
+var id_card_name = document.getElementById("id_card_num");
+var id_card_value = document.getElementById("id_card_num").value;
+var id_card_num_length = id_card_value.length;
+if(!id_card_value.match(numbers) || id_card_num_length < 13)
+{
+document.getElementById('id_card_num_err').innerHTML = 'Id Card Number should be in numbers only (without dash) and it must be 13 chracters long';
+id_card_name.focus();
+document.getElementById('id_card_num_err').style.color = "#FF0000";
+}
+else
+{
+document.getElementById('id_card_num_err').innerHTML = 'Valid CNIC Number';
+document.getElementById('id_card_num_err').style.color = "#00AF33";
+}
+}
+//Id Card validation ends
+
+//user name validation starts
+function username_validation(){
+'use strict';
+var username_name = document.getElementById("username");
+var username_value = document.getElementById("username").value;
+var username_length = username_value.length;
+var letters = /^[a-zA-Z]+$/;
+if(username_length < 8 || !username_value.match(letters))
+{
+document.getElementById('name_err').innerHTML = 'Name must contains atleast 8 chracters and it can only contians alphabets.';
+username_name.focus();
+document.getElementById('name_err').style.color = "#FF0000";
+}
+else
+{
+document.getElementById('name_err').innerHTML = 'Valid Name';
+document.getElementById('name_err').style.color = "#00AF33";
+}
+}
+//user name validation ends
+
+//Address validation starts
+function address_validation(){
+'use strict';
+var address_name = document.getElementById("address");
+var address_value = document.getElementById("address").value;
+var address_length = address_value.length;
+if(address_length< 10)
+{
+document.getElementById('address_err').innerHTML = 'Address must not be less than 10 characters';
+address_name.focus();
+document.getElementById('address_err').style.color = "#FF0000";
+}
+else
+{
+document.getElementById('address_err').innerHTML = 'Valid Address';
+document.getElementById('address_err').style.color = "#00AF33";
+}
+}
+//Address validation ends
+
+
+
+//country validation starts
+function centre_validation(){
+'use strict';
+var centre_name = document.getElementById("centre");
+var centre_value = document.getElementById("centre").value;
+if(centre_value === "Default" || centre_value === "--")
+{
+document.getElementById('centre_err').innerHTML = 'You must select a centre';
+centre_name.focus();
+document.getElementById('centre_err').style.color = "#FF0000";
+}
+else
+{
+document.getElementById('centre_err').innerHTML = 'Centre selected.';
+document.getElementById('centre_err').style.color = "#00AF33";
+}
+}
+//country validation ends
+
+//date valid
+function date_validation(){
+'use strict';
+var date_name = document.getElementById("date");
+var date_value = document.getElementById("date").value;
+var myDate = new Date(date_value);
+var today = new Date();
+if(myDate > today)
+{
+document.getElementById('date_err').innerHTML = 'Date cannot be greater then today date.';
+date_name.focus();
+document.getElementById('date_err').style.color = "#FF0000";
+}
+else
+{
+document.getElementById('date_err').innerHTML = 'Valid Date';
+document.getElementById('date_err').style.color = "#00AF33";
+}
+}
+
+
+
+
+//email validation starts
+function email_validation(){
+'use strict';
+var mailformat = /^\w+([\.\-]?\w+)*@\w+([\.\-]?\w+)*(\.\w{2,3})+$/;
+var email_name = document.getElementById("email");
+var email_value = document.getElementById("email").value;
+var email_length = email_value.length;
+if(!email_value.match(mailformat) || email_length === 0)
+{
+document.getElementById('email_err').innerHTML = 'This is not a valid email format.';
+email_name.focus();
+document.getElementById('email_err').style.color = "#FF0000";
+}
+else
+{
+document.getElementById('email_err').innerHTML = 'Valid email format';
+document.getElementById('email_err').style.color = "#00AF33";
+}
+}
+//email validation ends
+
+
+//Phone validation starts
+function phone_validation(){
+'use strict';
+var numbers = /^[0-9]+$/;
+var phone_name = document.getElementById("phone");
+var phone_value = document.getElementById("phone").value;
+var phone_length = phone_value.length;
+if(!phone_value.match(numbers) || phone_length != 11)
+{
+document.getElementById('phone_err').innerHTML = 'Phone Number should be in numbers only and it must be 11 chracters long.';
+phone_name.focus();
+document.getElementById('phone_err').style.color = "#FF0000";
+}
+else
+{
+document.getElementById('phone_err').innerHTML = 'Valid Phone Number';
+document.getElementById('phone_err').style.color = "#00AF33";
+}
+}
+//Phone validation ends
+
+</script>
+</head>
+<body style="background-color:SandyBrown; ">
+<h1>Form For Data Submission Of Partially Vaccinated Citizens</h1>
+<form name='registration' >
+<ul>
+<li><label for="userid">Pincode ID:</label></li>
+<li><input type="text" name="pin_id" id="pin_id" size="12" onBlur="pincode_id();"/><span id="id_error"></span></li>
+<li><label for="passid">ID Card #:</label></li>
+<li><input type="text" name="id_card_num" id="id_card_num" size="12" onBlur="id_card_validation();"/><span id="id_card_num_err"></span></li>
+<li><label for="username">Name:</label></li>
+<li><input type="text" name="username" id="username" size="50" onBlur="username_validation();" /><span id="name_err"></span></li>
+<li><label for="address">Address:</label></li>
+<li><input type="text" name="address" id="address" size="50" onBlur="address_validation();" /><span id="address_err"></span></li>
+<li><label for="centre">Centre:</label></li>
+<li><select id="centre" name="centre" onBlur="centre_validation();">
+<option selected="" value="Default">(Please select a Vaccination Centre)</option>
+<option value="--">none</option>
+<option value="AF">KARACHI -- Dow Ojha Hospital, Near mosmiat, Johar, Karachi</option>
+<option value="AL">LAHORE -- Expo Centre Johar Town Lahore </option>
+<option value="DZ">RAWALPINDI -- District Health Office Rawalpindi </option>
+<option value="AS">Islamabad -- CDA Medical Center G-9 Islamabad</option>
+<option value="AD">FAISALABAD -- Support complex samanabad, Faisalabad</option>
+<option value="AD">GUJRANWALA -- DC Camp office Nowshehra, Gujranwala</option>
+<option value="AD">SIALKOT --   Field Hospital Hockey Stadium Pasrur Road Sialkot</option>
+<option value="AD">GWADAR --   DHQ, GWADAR, Gwadar city</option>
+<option value="AD">QUETTA --   Red Crecent Hospital, Airport Road, Quetta</option>
+<option value="AD">LORALAI --   MCH Center, Loralai</option>
+</select><span id="centre_err"></span></li>
+<li><label for="date">First Dose Date:</label></li>
+<li><input type="date" name="date" id="date" size="50" onBlur="date_validation();"/><span id="date_err"></span></li>
+<li><label for="email">Email:</label></li>
+<li><input type="text" name="email" id="email" size="50" onBlur="email_validation();"/><span id="email_err"></span></li>
+<li><label for="phone">Phone:</label></li>
+<li><input type="text" name="phone" id="phone" size="50" onBlur="phone_validation();"/><span id="phone_err"></span></li>
+<li><label for="desc">Notes:</label></li>
+<li><textarea name="desc" id="desc"></textarea></li>
+<li><input type="submit" name="submit" value="Submit" /></li>
+
+</ul>
+</form>
+</body>
+</html>
