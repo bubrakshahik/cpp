@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class = "main">
+
+        <div class = "main-content">
+            <label class = "label" for="">From</label>
+            <label  class = "label" for="">To</label>
+            </br>
+            <input type="number" id = "fromNumber" value="">
+            <input type="number" id="toNumber" value = "">
+        </div>
+
+        <div class="convert">
+            <div class = "convert-content">
+                <select name="currencyFrom" class="currencyFrom">
+                <option  value= "select currency From" disabled>Select Currency From</option>
+                <option value="pk">PKR</option>
+                <option value="us">Dollar</option>
+                
+                <option value="eur">EURO</option>
+                <option value="gbp">GBP</option>
+                <option value="aud">AUD</option>
+                <option value="cny">CNY</option>
+                <option value="nzd">NZD</option>
+                <option value="aed">AED</option>
+                <option value="sar">SAR</option>
+                <option value="jpy">JPY</option>
+                </select>
+            </div>
+            <div class = "convert-content">
+                <select name="currencyTo" class="currencyTo">
+                    <option value = "select currency To" disabled>Select Currency To</option>
+                    <option  value="pk">PKR</option>
+                    <option  value="us">Dollar</option>
+                    <option value="eur">EURO</option>
+                <option value="gbp">GBP</option>
+                <option value="aud">AUD</option>
+                <option value="cny">CNY</option>
+                <option value="nzd">NZD</option>
+                <option value="aed">AED</option>
+                <option value="sar">SAR</option>
+                <option value="jpy">JPY</option>
+
+                    </select>
+            
+            </div>
+            
+        </div>
+        <div class="result" id = "result">
+            <p></p>
+        </div>
+        
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src = "jQuery.js"></script>
+    <script src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
+</body>
+</html>
